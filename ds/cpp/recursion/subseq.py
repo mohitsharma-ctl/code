@@ -6,3 +6,7 @@ def subseq(q,ans):
   subseq(q[1:],ans)      #subtree no
   
   print(subseq("mohit",""))
+
+
+
+# todo shift it to cpp
