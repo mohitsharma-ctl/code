@@ -1,7 +1,5 @@
 def ispar(x):
-    # code here
     stack = list()
-    # st = {")":"(","]":"[","}":"{" }
     if len(x)==1 or x[0] in ['}', ')',']']:
         return False
     for i in range(len(x)):
