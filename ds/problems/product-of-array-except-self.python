@@ -1,0 +1,60 @@
+// O(n*n) approach
+arr =  [-1,1,0,-3,3]
+
+result = []
+
+
+
+for i in range(len(arr)):
+  no = 1
+  for j in range(len(arr)):
+    if i == j:
+      continue
+    else:
+      no*=arr[j]
+  result.append(no)
+print(result)
+
+//O(n) approach with O(n) space complexity
+
+arr =  [-1,1,0,-3,3]
+
+
+prefix = []
+prefix.append(1)  //#first value is a netural value for prefix
+
+postfix = []
+postfix.append(1) #last value is a netural value for postfix
+
+for i in range(len(arr)-1):
+  
+  prefix.append(prefix[i]*arr[i])
+  
+for j in range(len(arr)-1,0,-1):
+  postfix.append(postfix[len(arr)-j-1]*arr[j])
+  """# print(len(arr)-j-1)"""
+  
+result = []
+  
+for k in range(len(arr)):
+  result.append(prefix[k]*postfix[len(arr)-1-k])
+  print(postfix[len(arr)-1-k])
+
+print(result)
+
+//O(n) time complexity with O(1) space complexity
+
+
+result = []
+result.append(1)
+
+for i in range(len(arr)-1):
+  
+  result.append(result[i]*arr[i])
+
+postfix = 1
+for j in range(len(arr)-1,-1,-1):
+  result[j] *= postfix
+  postfix*=arr[j]
+
+print(result)
