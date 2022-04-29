@@ -18,5 +18,3 @@ def dec_to_bin(x):
 
 print(dec_to_bin(6))
 
-
-
